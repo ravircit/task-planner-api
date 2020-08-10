@@ -1,11 +1,13 @@
 package com.example.taskplannerapi.model;
 
 import com.example.taskplannerapi.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.Instant;
+
 
 public class Task {
     @NotNull(message = "Title cannot be null.")
@@ -98,6 +100,7 @@ public class Task {
         return taskID;
     }
 
+    @JsonIgnore
     public Integer getNextTaskID() {
         return ++taskID;
     }

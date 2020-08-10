@@ -28,7 +28,7 @@ public class TaskController {
 //        return task.getTaskID();
 //    }
     @PostMapping("/createtask")
-    public ResponseEntity<Object> createUser(@Valid @RequestBody Task task) {
+    public ResponseEntity<?> createUser(@Valid @RequestBody Task task) {
         taskService.addTask(task.getNextTaskID(), task);
 
         URI location = ServletUriComponentsBuilder
